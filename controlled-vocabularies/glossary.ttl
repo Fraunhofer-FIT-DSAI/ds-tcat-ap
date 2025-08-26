@@ -1,0 +1,828 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dssc:    <https://w3id.org/dataspaces/ont/dssc/> .
+
+dssc:GlossaryConceptScheme
+    a              skos:ConceptScheme ;
+    skos:prefLabel "Dataspaces Glossary from the Dataspaces Blueprint v2.0 published by the Data Spaces Support Centre (DSSC)"@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251749/Glossary> ;
+    rdfs:seeAlso   <https://dssc.eu/space/BVE2/1071252161/Alphabetical+List+of+All+Defined+Terms+in+Blueprint+v2.0> .
+
+### Section 1: Key Concept Definitions ###################################################################################
+
+dssc:DataSpace
+    a              skos:Concept ;
+    skos:prefLabel "Data space"@en ;
+    skos:altLabel  "Dataspace"@en ;
+    skos:definition
+                   "Interoperable framework, based on common governance principles, standards, practices and enabling services, that enables trusted data transactions between participants."@en ;
+    skos:scopeNote """For reference, the previous definition was: "Distributed system defined by a governance framework that enables secure and trustworthy data transactions between participants while supporting trust and data sovereignty. A data space is implemented by one or more infrastructures and enables one or more use cases.\""""@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataSpaceGovernanceFramework
+    a              skos:Concept ;
+    skos:prefLabel "Data space governance framework"@en ;
+    skos:definition
+                   "The structured set of principles, processes, standards, protocols, rules and practices that guide and regulate the governance, management and operations within a data space to ensure effective and responsible leadership, control, and oversight. It defines the functionalities the data space provides and the associated data space roles, including the data space governance authority and participants."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataSpaceRulebook
+    a               skos:Concept ;
+    skos:prefLabel  "Data space rulebook"@en ;
+    skos:definition "The documentation of the data space governance framework for operational use."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataSpaceGovernanceAuthority
+    a              skos:Concept ;
+    skos:prefLabel "Data space governance authority"@en ;
+    skos:definition
+                   "The body of a particular data space, consisting of participants that is committed to the governance framework for the data space, and is responsible for developing, maintaining, operating and enforcing the governance framework."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataSpaceParticipant
+    a              skos:Concept ;
+    skos:prefLabel "Data space participant"@en ;
+    skos:definition
+                   "A party committed to the governance framework of a particular data space and having a set of rights and obligations stemming from this framework."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:Party
+    a               skos:Concept ;
+    skos:prefLabel  "Party"@en ;
+    skos:definition "A natural person or a legal person."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataSpaceRole
+    a              skos:Concept ;
+    skos:prefLabel "Data space role"@en ;
+    skos:definition
+                   "A distinct and logically consistent set of rights and duties (responsibilities) within a data space, that are required to perform specific tasks related to a data space functionality, and that are designed to be performed by one or more participants."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataSpaceFunctionality
+    a              skos:Concept ;
+    skos:prefLabel "Data space functionality"@en ;
+    skos:definition
+                   "A specified set of tasks that are critical for operating a data space and that can be associated with one or more data space roles."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataSpaceInfrastructure
+    a              skos:Concept ;
+    skos:prefLabel "Data space infrastructure (deprecated term)"@en ;
+    skos:definition
+                   "A technical, legal, procedural and organisational set of components and services that together enable data transactions to be performed in the context of one or more data spaces."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:Services
+    a              skos:Concept ;
+    skos:prefLabel "Services"@en ;
+    skos:definition
+                   "Functionalities for implementing data space capabilities, offered to participants of data spaces. Technical (software) components are needed to implement these services."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataTransaction
+    a              skos:Concept ;
+    skos:prefLabel "Data transaction"@en ;
+    skos:definition
+                   "A structured interaction between data space participants for the purpose of providing and obtaining/using a data product. An end-to-end data transaction consists of various phases, such as contract negotiation, execution, usage, etc."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataProduct
+    a               skos:Concept ;
+    skos:prefLabel  "Data product"@en ;
+    skos:definition "Data sharing units, packaging data and metadata, and any associated license terms."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+dssc:DataSpaceUseCase
+    a              skos:Concept ;
+    skos:prefLabel "Data space use case"@en ;
+    skos:definition
+                   "A specific setting in which two or more participants use a data space to create value (business, societal or environmental) from data sharing."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251781/1+Key+Concept+Definitions> .
+
+### Section 2: Use Cases and Business Model ###################################################################################
+
+dssc:UseCaseOrchestrator
+    a              skos:Concept ;
+    skos:prefLabel "Use case orchestrator"@en ;
+    skos:definition
+                   "A data space participant that represents and is accountable for a specific use case in the context of the governance framework. The orchestrator establishes and enforces business rules and other conditions to be followed by the use case participants. [role]"@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251829/2+Data+Space+Use+Cases+and+Business+Model> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:UseCaseParticipant
+    a               skos:Concept ;
+    skos:prefLabel  "Use case participant"@en ;
+    skos:definition "A data space participant that is engaged with a specific use case. [role]"@en ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251829/2+Data+Space+Use+Cases+and+Business+Model> ;
+    skos:inScheme   dssc:GlossaryConceptScheme .
+
+dssc:UseCaseDevelopment
+    a              skos:Concept ;
+    skos:prefLabel "Use case development"@en ;
+    skos:definition
+                   "A strategic approach to amplify the value of a data space by fostering the creation, support and scaling of use cases."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251829/2+Data+Space+Use+Cases+and+Business+Model> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:DataSpaceValue
+    a              skos:Concept ;
+    skos:prefLabel "Data space value"@en ;
+    skos:definition
+                   "The cumulative value generated from all the data transactions and use cases within a data space as data space participants collaboratively use it."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251829/2+Data+Space+Use+Cases+and+Business+Model> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:SynergyBetweenDataSpaces
+    a              skos:Concept ;
+    skos:prefLabel "Synergy between data spaces"@en ;
+    skos:definition
+                   "The gained efficiency, increased impact or other benefits of two or more data spaces working together that are greater than if the data spaces were working separately. The synergies between data spaces can be enabled by common practices, communication concepts, services and/or components, which increase data space interoperability and enable harmonised processes of using different data spaces."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251829/2+Data+Space+Use+Cases+and+Business+Model> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+### Section 3: Evolution of Data Space Initiatives ###################################################################################
+
+dssc:DataSpaceInitiative
+    a              skos:Concept ;
+    skos:prefLabel "Data space initiative"@en ;
+    skos:definition
+                   "A collaborative project of a consortium or network of committed partners to initiate, develop and maintain a data space."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:DataSpaceDevelopmentProcesses
+    a              skos:Concept ;
+    skos:prefLabel "Data space development processes"@en ;
+    skos:definition
+                   "A set of essential processes the stakeholders of a data space initiative conduct to establish and continuously develop a data space throughout its development cycle."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:DataSpaceOperationalProcesses
+    a              skos:Concept ;
+    skos:prefLabel "Data space operational processes"@en ;
+    skos:definition
+                   "A set of essential processes a potential or actual data space participant goes through when engaging with a functioning data space that is in the operational stage or scaling stage. The operational processes include attracting and onboarding participants, publishing and matching use cases, data products and data requests and eventually data transactions."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:DataSpacePilot
+    a              skos:Concept ;
+    skos:prefLabel "Data space pilot"@en ;
+    skos:definition
+                   "A planned and resourced implementation of one or more use cases within the context of a data space initiative. A data space pilot aims to validate the approach for a full data space deployment and showcase the benefits of participating in the data space."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:DevelopmentCycle
+    a              skos:Concept ;
+    skos:prefLabel "Development cycle"@en ;
+    skos:definition
+                   "The sequence of stages that a data space initiative passes through during its progress and growth. In each stage, the initiative has different needs and challenges, and when progressing through the stages, it evolves regarding knowledge, skills and capabilities."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:ExploratoryStage
+    a              skos:Concept ;
+    skos:prefLabel "Exploratory stage"@en ;
+    skos:definition
+                   "The stage in the development cycle in which a data space initiative starts. Typically, in this stage, a group of people or organisations starts to explore the potential and viability of a data space. The exploratory activities may include, among others, identifying and attracting interested stakeholders, collecting requirements, discussing use cases or reviewing existing conventions or standards. "@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:PreparatoryStage
+    a              skos:Concept ;
+    skos:prefLabel "Preparatory stage"@en ;
+    skos:definition
+                   "The stage in the development cycle that starts when a data space initiative has a critical mass of committed stakeholders and there is an agreement to move forward with the initiative and proceed towards creating a data space. It is typical for this stage that such partners jointly develop use cases and prepare to implement the data space."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:ImplementationStage
+    a              skos:Concept ;
+    skos:prefLabel "Implementation stage"@en ;
+    skos:definition
+                   "The stage in the development cycle that starts when a data space initiative has a sufficiently detailed project plan, milestones and resources (funding and other) for developing its governance framework and infrastructure in the context of a data space pilot. It is typical for this stage that the parties involved in the pilot and the value created for each are also clearly identified."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:OperationalStage
+    a              skos:Concept ;
+    skos:prefLabel "Operational stage"@en ;
+    skos:definition
+                   "The stage in the development cycle that starts when a data space initiative has a tested implementation of infrastructure(s) and governance framework, and the first use case becomes operational (data flowing between  data providers and data recipients and use case providing the intended value)."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:ScalingStage
+    a              skos:Concept ;
+    skos:prefLabel "Scaling stage"@en ;
+    skos:definition
+                   "The stage in the development cycle that starts when a data space initiative has been proven to consistently and organically gain new participants and embrace new use cases. In this stage, the data space can realistically be expected to be financially and operationally sustainable, respond to market changes, and grow over time."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:DataSpacesInformationModel
+    a              skos:Concept ;
+    skos:prefLabel "Data spaces information model"@en ;
+    skos:definition
+                   "A classification scheme used to describe, analyse and organise a data space initiative according to a defined set of questions."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:DataSpaceMaturityModel
+    a              skos:Concept ;
+    skos:prefLabel "Data space maturity model"@en ;
+    skos:definition
+                   "Set of indicators and a self-assessment tool allowing data space initiatives to understand their stage in the development cycle, their performance indicators and their technical, functional, operational, business and legal capabilities in absolute terms and in relation to peers."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:DataSpacesRadar
+    a              skos:Concept ;
+    skos:prefLabel "Data spaces radar"@en ;
+    skos:definition
+                   "A publicly accessible tool to provide an overview of the data space initiatives, their sectors, locations and approximate development stages."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251857/3++Evolution+of+Data+Space+Initiatives> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+### Section 4: Data Space Services ###################################################################################
+
+dssc:Services
+    a              skos:Concept ;
+    skos:prefLabel "Services"@en ;
+    skos:definition
+                   "Functionalities for implementing data space capabilities, offered to participants of data spaces. Technical (software) components are needed to implement these services."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:ParticipantAgentServices
+    a              skos:Concept ;
+    skos:prefLabel "Participant agent services"@en ;
+    skos:definition
+                   "Services to enable an individual participant to join the data space, facilitate the sharing (providing or using) of data, specify access and usage policies, and more. Participant agents implement the control- and (in some cases) the data plane."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:FederationServices
+    a              skos:Concept ;
+    skos:prefLabel "Federation services"@en ;
+    skos:definition
+                   "Services which facilitate the interplay of participants in a data space, enabling them to engage in (commercial) data-sharing relationships of all sorts and shapes. They perform an intermediary role in the data space."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:ValueCreationService
+    a               skos:Concept ;
+    skos:prefLabel  "Value-creation service"@en ;
+    skos:definition "Any service aimed to create value out of the data shared in the data space."@en ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme   dssc:GlossaryConceptScheme .
+
+dssc:DataSpaceConnector
+    a              skos:Concept ;
+    skos:prefLabel "Data space connector"@en ;
+    skos:definition
+                   "A technical component that is run by (or on behalf of) a participant and that provides participant agent services, with similar components run by (or on behalf of) other participants."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:Operator
+    a              skos:Concept ;
+    skos:prefLabel "Operator"@en ;
+    skos:definition
+                   "Service provider that provides most of the enabling services that are common to all participants of the data space. In common usage interchangeable with 'intermediary'."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:Intermediary
+    a              skos:Concept ;
+    skos:prefLabel "Intermediary"@en ;
+    skos:definition
+                   "Service provider who provides an enabling service or services in a data space. In common usage interchangeable with 'operator'."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:ParticipantAgentIntermediary
+    a              skos:Concept ;
+    skos:prefLabel "Participant agent intermediary"@en ;
+    skos:definition
+                   "A party who provides participant agent services for the data space participants as defined by the data space governance framework."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+dssc:PersonalDataIntermediary
+    a              skos:Concept ;
+    skos:prefLabel "Personal data intermediary"@en ;
+    skos:definition
+                   "A specific participant agent intermediary that is focused on providing services for natural persons."@en ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251892/4+Data+Space+Services> ;
+    skos:inScheme  dssc:GlossaryConceptScheme .
+
+### Section 5 Data Products and Transactions ###################################################################################
+dssc:DataProduct
+    a               skos:Concept ;
+    skos:prefLabel  "Data product"@en ;
+    skos:definition "Data sharing units, packaging data and metadata, and any associated license terms."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251920/5+Data+Products+and+Transactions> .
+
+dssc:DataService
+    a              skos:Concept ;
+    skos:prefLabel "Data service"@en ;
+    skos:definition
+                   "A collection of operations that provides access to one or more datasets or data processing functions. For example, data selection, extraction, data delivery."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251920/5+Data+Products+and+Transactions> .
+
+dssc:DataProductOwner
+    a               skos:Concept ;
+    skos:prefLabel  "Data product owner"@en ;
+    skos:definition "A party that develops, manages and maintains a data product."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251920/5+Data+Products+and+Transactions> .
+
+dssc:DataProductProvider
+    a              skos:Concept ;
+    skos:prefLabel "Data product provider"@en ;
+    skos:definition
+                   "A party that acts on behalf of a data product owner in providing, managing and maintaining a data product in a data space."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251920/5+Data+Products+and+Transactions> .
+
+dssc:DataProductConsumer
+    a               skos:Concept ;
+    skos:prefLabel  "Data product consumer"@en ;
+    skos:definition "A party that commits to a data product contract concerning one or more data products."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251920/5+Data+Products+and+Transactions> .
+
+dssc:DataProductContract
+    a              skos:Concept ;
+    skos:prefLabel "Data product contract"@en ;
+    skos:definition
+                   "A legal contract that specifies a set of rights and duties for the respective parties that will perform the roles of the data product provider and data product consumer."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251920/5+Data+Products+and+Transactions> .
+
+dssc:DataRightsHolder
+    a              skos:Concept ;
+    skos:prefLabel "Data rights holder"@en ;
+    skos:definition
+                   "A party with legitimate interests to exercise rights under Union law affecting the use of data or imposing obligations on other parties in relation to the data."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251920/5+Data+Products+and+Transactions> .
+
+### Section 6 Data Policies and Contracts ###################################################################################
+dssc:DataPolicy
+    a              skos:Concept ;
+    skos:prefLabel "Data policy"@en ;
+    skos:definition
+                   "A set of rules, working instructions, preferences and other guidance to ensure that data is obtained, stored, retrieved, and manipulated consistently with the standards set by the governance framework and/or data rights holders."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251950/6+Data+Policies+and+Contracts> .
+
+dssc:DataAccessPolicy
+    a              skos:Concept ;
+    skos:prefLabel "Data access policy"@en ;
+    skos:definition
+                   "A specific data policy defined by the data rights holder for accessing their shared data in a data space."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251950/6+Data+Policies+and+Contracts> .
+
+dssc:DataUsagePolicy
+    a              skos:Concept ;
+    skos:prefLabel "Data usage policy"@en ;
+    skos:definition
+                   "A specific data policy defined by the data rights holder for the usage of their data shared in a data space."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251950/6+Data+Policies+and+Contracts> .
+
+dssc:PolicyDefinitionLanguage
+    a              skos:Concept ;
+    skos:prefLabel "Policy definition language"@en ;
+    skos:definition
+                   "A machine-processable mechanism for representing statements about the data policies, e.g., Open Digital Rights Language (ODRL)."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251950/6+Data+Policies+and+Contracts> .
+
+dssc:DataPolicyEnforcement
+    a              skos:Concept ;
+    skos:prefLabel "Data policy enforcement"@en ;
+    skos:definition
+                   "A set of measures and mechanisms to monitor, control and ensure adherence to established data policies."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251950/6+Data+Policies+and+Contracts> .
+
+dssc:DataPolicyNegotiation
+    a              skos:Concept ;
+    skos:prefLabel "Data policy negotiation"@en ;
+    skos:definition
+                   "The process of reaching agreements on data policies between a data rights holder, a data provider and a data recipient. The negotiation can be fully machine-processable and immediate or involve human activities as part of the workflow."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251950/6+Data+Policies+and+Contracts> .
+
+### Section 7 Interoperability ###################################################################################
+dssc:DataSpaceInteroperability
+    a              skos:Concept ;
+    skos:prefLabel "Data space interoperability"@en ;
+    skos:definition
+                   "The ability of participants to seamlessly exchange and use data within a data space or between two or more data spaces."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251978/7+Interoperability> .
+
+dssc:IntraDataSpaceInteroperability
+    a               skos:Concept ;
+    skos:prefLabel  "Intra-data space interoperability"@en ;
+    skos:definition "The ability of participants to seamlessly access and/or exchange data within a data space. Intra-data space interoperability addresses the governance, business and technical frameworks (including the data space protocol and the data models) for individual data space instances."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071251978/7+Interoperability> .
+
+dssc:CrossDataSpaceInteroperability
+    a              skos:Concept ;
+    skos:prefLabel "Cross-data space interoperability"@en ;
+    skos:definition
+                   "The ability of participants to seamlessly access and/or exchange data across two or more data spaces. Cross-data spaces interoperability addresses the governance, business and technical frameworks to interconnect multiple data space instances seamlessly."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071251978/7+Interoperability> .
+
+### Section 8: Identity and Trust ###################################################################################
+dssc:Assurance
+    a              skos:Concept ;
+    skos:prefLabel "Assurance"@en ;
+    skos:definition
+                   "An artefact that helps parties make trust decisions, such as certificates, commitments, contracts, warranties, etc."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252008/8+Identity+and+Trust> .
+
+dssc:TrustAnchor
+    a              skos:Concept ;
+    skos:prefLabel "Trust anchor"@en ;
+    skos:definition
+                   "Trust Anchors are bodies, parties, i.e., Conformity Assessment Bodies or technical means accredited by the data space governance authority to be parties eligible to issue attestations about specific claims."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252008/8+Identity+and+Trust> .
+
+dssc:TrustDecision
+    a              skos:Concept ;
+    skos:prefLabel "Trust decision"@en ;
+    skos:definition
+                   "A judgement made by a party to rely on some statement being true without requiring absolute proof or certainty."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252008/8+Identity+and+Trust> .
+
+dssc:TrustFramework
+    a              skos:Concept ;
+    skos:prefLabel "Trust framework"@en ;
+    skos:definition
+                   "A composition of policies, rules, standards, and procedures designed for trust decisions in data spaces based on assurances. Trust framework is part of the data space governance framework."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252008/8+Identity+and+Trust> .
+
+dssc:Validation
+    a              skos:Concept ;
+    skos:prefLabel "Validation"@en ;
+    skos:definition
+                   "Confirmation of plausibility for a specific intended use or application through the provision of objective evidence that specified requirements have been fulfilled (ref. ISO/IEC 17000:2020(en), Conformity assessment — Vocabulary and general principles)."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252008/8+Identity+and+Trust> .
+
+dssc:Verification
+    a              skos:Concept ;
+    skos:prefLabel "Verification"@en ;
+    skos:definition
+                   "Confirmation of truthfulness through the provision of objective evidence that specified requirements have been fulfilled (ref. ISO/IEC 17000:2020(en), Conformity assessment — Vocabulary and general principles)."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252008/8+Identity+and+Trust> .
+
+### Section 9: Building Blocks and Implementations ###################################################################################
+dssc:DataSpacesBlueprint
+    a              skos:Concept ;
+    skos:prefLabel "Data spaces blueprint"@en ;
+    skos:definition
+                   "A consistent, coherent and comprehensive set of guidelines to support the implementation, deployment and maintenance of data spaces."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252045/9+Building+Blocks+and+Implementations> .
+
+dssc:DataSpaceBuildingBlock
+    a              skos:Concept ;
+    skos:prefLabel "Data space building block"@en ;
+    skos:definition
+                   "A description of related functionalities and/or capabilities that can be realised and combined with other building blocks to achieve the overall functionality of a data space."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252045/9+Building+Blocks+and+Implementations> .
+
+dssc:DataSpaceComponent
+    a              skos:Concept ;
+    skos:prefLabel "Data space component"@en ;
+    skos:definition
+                   "A specification for a software or other artefact that realises one service or a set of services that fulfil functionalities described by one or more building blocks."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252045/9+Building+Blocks+and+Implementations> .
+
+dssc:DataSpaceComponentArchitecture
+    a              skos:Concept ;
+    skos:prefLabel "Data space component architecture"@en ;
+    skos:definition
+                   "An overview of all the data space components and their interactions, providing a high-level structure of how these components are organised and interact within data spaces."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252045/9+Building+Blocks+and+Implementations> .
+
+dssc:ImplementationOfDataSpaceComponent
+    a              skos:Concept ;
+    skos:prefLabel "Implementation of a data space component"@en ;
+    skos:definition
+                   "The result of translating/converting a data space component into a functional and usable artefact, such as executable code or other tool."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252045/9+Building+Blocks+and+Implementations> .
+
+### Section 10: DSSC Specific Terms ###################################################################################
+dssc:DataSpacesSupportCentre
+    a              skos:Concept ;
+    skos:prefLabel "Data Spaces Support Centre"@en ;
+    skos:definition
+                   "The virtual organisation and EU-funded project which supports the deployment of common European data spaces and promotes the reuse of data across sectors."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:DSSCAsset
+    a              skos:Concept ;
+    skos:prefLabel "DSSC asset"@en ;
+    skos:definition
+                   "A sustainable open resource that is developed and governed by the Data Spaces Support Centre. The assets can be used to develop, deploy and operationalise data spaces and to enable knowledge sharing around data spaces. The DSSC also develops and executes strategies to provide continuity for the main assets beyond the project funding."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:ConceptualModelOfDataSpace
+    a              skos:Concept ;
+    skos:prefLabel "Conceptual model of data space"@en ;
+    skos:definition
+                   "A consistent, coherent and comprehensive description of the concepts and their relationships that can be used to unambiguously explain what data spaces and data space initiatives are about."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:DSSCGlossary
+    a              skos:Concept ;
+    skos:prefLabel "DSSC glossary"@en ;
+    skos:definition
+                   "A limited set of data spaces related terms and corresponding descriptions. Each term refers to a concept, and the term description contains a criterion that enables people to determine whether or not something is an instance (example) of that concept."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:DSSCToolbox
+    a               skos:Concept ;
+    skos:prefLabel  "DSSC toolbox"@en ;
+    skos:definition "A catalogue of data space component implementations curated by the Data Space Support Centre."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:DataSpacesTechnologyLandscape
+    a              skos:Concept ;
+    skos:prefLabel "Data spaces technology landscape"@en ;
+    skos:definition
+                   "A repository of standards (de facto and de jure), specifications and open-source reference implementations available for deploying data spaces. The Data Space Support Centre curates the repository and publishes it with the blueprint."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:DataSpacesStarterKit
+    a              skos:Concept ;
+    skos:prefLabel "Data spaces starter kit"@en ;
+    skos:definition
+                   "A document that helps organisations and individuals in the network of stakeholders to understand the requirements for creating a data space."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:CommunityHeartbeat
+    a              skos:Concept ;
+    skos:prefLabel "Community heartbeat"@en ;
+    skos:definition
+                   "The regular release of the data spaces blueprint, data spaces building blocks, other DSSC assets and supporting activities, as outlined in a public roadmap. The regular releases aim to engage the community of practice into a rhythm of communication, co-learning and continuous improvement."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:CommunityOfPractice
+    a              skos:Concept ;
+    skos:prefLabel "Community of practice"@en ;
+    skos:definition
+                   "The set of existing and emerging data space initiatives in all sectors and the set of (potential) data space component implementers. DSSC prioritises the data space projects funded by the Digital Europe Programme and other relevant programmes and will later expand to additional data space initiatives."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:RelationshipManager
+    a              skos:Concept ;
+    skos:prefLabel "Relationship manager"@en ;
+    skos:definition
+                   "A person from the Data Spaces Support Centre who serves as the dedicated DSSC contact point for a data space initiative or another member of the community of practice."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:NetworkOfStakeholders
+    a              skos:Concept ;
+    skos:prefLabel "Network of stakeholders"@en ;
+    skos:definition
+                   "The group of parties relevant to the development of data spaces and with whom the Data Spaces Support Centre proactively engages in achieving its purpose and objectives. The community of practice is the core subset of this network of stakeholders and the primary focus group for the DSSC."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:StrategicStakeholderForum
+    a              skos:Concept ;
+    skos:prefLabel "Strategic stakeholder forum"@en ;
+    skos:definition
+                   "The designated group of experts that provide strategic support for the DSSC and make recommendations for the governance and sustainability of the DSSC assets. The strategic stakeholder forum is composed of a large variety of stakeholders with a balanced geographical distribution and will evolve progressively."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+dssc:DataSpaceSupportOrganisation
+    a              skos:Concept ;
+    skos:prefLabel "Data space support organisation"@en ;
+    skos:definition
+                   "An organisation, consortium, or collaboration network that specifies architectures and frameworks to support data space initiatives. Examples include Gaia-X, IDSA, FIWARE, iSHARE, MyData, BDVA, and more."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252073/10+DSSC+Specific+Terms> .
+
+### Section 11: Foundation of the European Data Economy Concepts - Relevant legislative instruments and policy terms ###
+
+dssc:EuropeanStrategyForData
+    a              skos:Concept ;
+    skos:prefLabel "European strategy for data"@en ;
+    skos:definition
+                   "A vision and measures (a strategy) that contribute to a comprehensive approach to the European data economy, aiming to increase the use of, and demand for, data and data-enabled products and services throughout the Single Market. It presents the vision to create a European single market for data."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DigitalEuropeProgramme
+    a               skos:Concept ;
+    skos:prefLabel  "Digital Europe Programme"@en ;
+    skos:definition "An EU funding programme that funds several data space related projects, among other topics. The programme is focused on bringing digital technology to businesses, citizens and public administrations."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:HorizonEuropeProgramme
+    a              skos:Concept ;
+    skos:prefLabel "Horizon Europe Programme"@en ;
+    skos:definition
+                   "An EU funding programme that funds data space related research and innovation projects, among other topics."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:EuropeanSingleMarketForData
+    a              skos:Concept ;
+    skos:prefLabel "European single market for data"@en ;
+    skos:definition
+                   "A genuine single market for data – open to data from across the world – where personal and non-personal data, including sensitive business data, are secure and businesses also have easy access to high-quality industrial data, boosting growth and creating value."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:CommonEuropeanDataSpaces
+    a              skos:Concept ;
+    skos:prefLabel "Common European Data Spaces"@en ;
+    skos:definition
+                   "Sectoral/domain-specific data spaces established in the European single market with a clear EU-wide scope that adheres to European rules and values."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataSovereignty
+    a              skos:Concept ;
+    skos:prefLabel "Data sovereignty"@en ;
+    skos:definition
+                   "The ability of individuals, organisations, and governments to have control over their data and exercise their rights on the data, including its collection, storage, sharing, and use by others."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataGovernanceAct
+    a              skos:Concept ;
+    skos:prefLabel "Data Governance Act"@en ;
+    skos:definition
+                   "A European regulation that aims to create a framework to facilitate European data spaces and increase trust between actors in the data market. Entered into force in June 2022, applies from Sept 2023, and defines the European Data Innovation Board (EDIB)."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:EuropeanDataInnovationBoard
+    a              skos:Concept ;
+    skos:prefLabel "European Data Innovation Board"@en ;
+    skos:definition
+                   "The expert group established by the Data Governance Act (DGA) to assist the European Commission in the sharing of best practices, in particular on data intermediation, data altruism and the use of public data that cannot be made available as open data, as well as on the prioritisation of cross-sectoral interoperability standards, which includes proposing guidelines for common European data spaces (DGA Article 30). The European Data Innovation Board (EDIB) will have additional competencies under the Data Act."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:GuidelinesForCommonEuropeanDataSpaces
+    a              skos:Concept ;
+    skos:prefLabel "Guidelines for common European data spaces"@en ;
+    skos:definition
+                   "The Data Governance Act (DGA Article 30(h)) defines that the European Data Innovation Board will propose guidelines for common European data spaces. The guidelines shall address, among other things: (i) cross-sectoral standards for data sharing, (ii) counter barriers to market entry and avoiding lock-in effects and ensuring fair competition and interoperability, (iii) protection for lawful data transfers to third countries, (iv) non-discriminatory representation of relevant stakeholders in the governance of common European data spaces and (v) adherence to cybersecurity requirements."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataAct
+    a              skos:Concept ;
+    skos:prefLabel "Data Act"@en ;
+    skos:definition
+                   "A European regulation that establishes EU-wide rules for access to the product or related service data to the user of that connected product or service. The regulation also includes essential requirements for the interoperability of data spaces (Article 33) and essential requirements for smart contracts to implement data sharing agreements (Article 36)."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+### Section 11: Foundation of the European Data Economy Concepts - Legal definitions regarding European data economy concepts ###
+
+dssc:Data
+    a              skos:Concept ;
+    skos:prefLabel "Data"@en ;
+    skos:definition
+                   "Any digital representation of acts, facts or information and any compilation of such acts, facts or information, including in the form of sound, visual or audiovisual recording; (DGA Article 2(1))."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataSharing
+    a              skos:Concept ;
+    skos:prefLabel "Data sharing"@en ;
+    skos:definition
+                   "The provision of data by a data subject or a data holder to a data user for the purpose of the joint or individual use of such data, based on voluntary agreements or Union or national law, directly or through an intermediary, for example under open or commercial licences subject to a fee or free of charge; (DGA Article 2(10))."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataHolder
+    a              skos:Concept ;
+    skos:prefLabel "Data holder"@en ;
+    skos:definition
+                   """A legal person, including public sector bodies and international organisations, or a natural person who is not a data subject with respect to the specific data in question, which, in accordance with applicable Union or national law, has the right to grant access to or to share certain personal data or non-personal data; (DGA Article 2(8), DA Article 2(13)).
+                   A natural or legal person that has the right or obligation, in accordance with this Regulation, applicable Union law or national legislation adopted in accordance with Union law, to use and make available data, including, where contractually agreed, product data or related service data which it has retrieved or generated during the provision of a related service;(DA Article 2(13))."""@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataRecipientDA
+    a              skos:Concept ;
+    skos:prefLabel "Data recipient (DA)"@en ;
+    skos:definition
+                   "A natural or legal person, acting for purposes which are related to that person’s trade, business, craft or profession, other than the user of a connected product or related service, to whom the data holder makes data available, including a third party following a request by the user to the data holder or in accordance with a legal obligation under Union law or national legislation adopted in accordance with Union law; (DA Article 2(14))."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataUser
+    a              skos:Concept ;
+    skos:prefLabel "Data user"@en ;
+    skos:definition
+                   "A natural or legal person who has lawful access to certain personal or non-personal data and has the right, including under Regulation (EU) 2016/679 in the case of personal data, to use that data for commercial or noncommercial purposes; (DGA Article 2(9))."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataIntermediationService
+    a              skos:Concept ;
+    skos:prefLabel "Data intermediation service"@en ;
+    skos:definition
+                   """A service that is legally defined in the Data Governance Act and enforced by national agencies. An operator in a data space may qualify as a data intermediation service provider, depending on the scope of the services.
+                   DGA definition (simplified): ‘Data intermediation service’ means a service which aims to establish commercial relationships for the purposes of data sharing between an undetermined number of data subjects and data holders on the one hand and data users on the other through technical, legal or other means, including for the purpose of exercising the rights of data subjects in relation to personal data. (DGA Article 2(11))."""@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataAltruism
+    a              skos:Concept ;
+    skos:prefLabel "Data altruism"@en ;
+    skos:definition
+                   "The voluntary sharing of data on the basis of the consent of data subjects to process personal data pertaining to them, or permissions of data holders to allow the use of their non-personal data without seeking or receiving a reward that goes beyond compensation related to the costs that they incur where they make their data available for objectives of general interest as provided for in national law, where applicable, such as healthcare, combating climate change, improving mobility, facilitating the development, production and dissemination of official statistics, improving the provision of public services, public policy making or scientific research purposes in the general interest; (DGA Article 2(16))."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:PersonalData
+    a              skos:Concept ;
+    skos:prefLabel "Personal data"@en ;
+    skos:definition
+                   "Any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; (GDPR Article 4(1))."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:NonPersonalData
+    a               skos:Concept ;
+    skos:prefLabel  "Non-personal data"@en ;
+    skos:definition "Data other than personal data; (DGA Article 2(4))."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:DataSubject
+    a               skos:Concept ;
+    skos:prefLabel  "Data subject"@en ;
+    skos:definition "An identified or identifiable natural person that personal data relates to (GDPR Article 4(1))."@en ;
+    skos:inScheme   dssc:GlossaryConceptScheme ;
+    dcterms:source  <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
+
+dssc:Consent
+    a              skos:Concept ;
+    skos:prefLabel "Consent"@en ;
+    skos:definition
+                   "Any freely given, specific, informed and unambiguous indication of the data subject's wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her; (GDPR Article 4(11))."@en ;
+    skos:inScheme  dssc:GlossaryConceptScheme ;
+    dcterms:source <https://dssc.eu/space/BVE2/1071252101/11+Foundation+of+the+European+Data+Economy+Concepts> .
