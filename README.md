@@ -32,6 +32,7 @@ The following figure illustrates the inverted pyramid of the three metadata spec
     - DS-TCAT ontology: extends TCAT to capture dataspace-specific concepts
         - Service-specific modules (e.g., Vocabulary Service module, Participant Agent Service module)
 - **Controlled vocabularies** for representing enumerations
+  - [Controlled vocabulary for the Dataspaces Glossary from the DSSC Dataspaces Blueprint v2.0](controlled-vocabularies/glossary.ttl)
 - **Competency questions** for scoping and validating the models (Issues and discussions)
 - **Example instances and queries** (SPARQL queries based on competency questions)
 - **Documentation** (Currently, in README files)

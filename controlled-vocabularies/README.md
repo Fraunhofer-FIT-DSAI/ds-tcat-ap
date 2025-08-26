@@ -32,3 +32,5 @@
 - [This](https://schema.org/Enumeration) index page contains a list of all enumerations.
 
 # New Vocabularies
+
+### [Controlled vocabulary for the Dataspaces Glossary from the DSSC Dataspaces Blueprint v2.0](glossary.ttl)
