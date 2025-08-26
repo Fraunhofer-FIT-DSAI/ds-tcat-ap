@@ -1,0 +1,61 @@
+@prefix tcat:    <https://w3id.org/dataspaces/ont/tcat/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix schema:  <https://schema.org/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix voaf:    <http://purl.org/vocommons/voaf#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix lang:    <http://publications.europa.eu/resource/authority/language/> .
+
+# Ontology Definition
+tcat:
+    a                             owl:Ontology, voaf:Vocabulary ;
+
+    # Basic Metadata
+    dcterms:title                 "Tool Catalog Ontology (TCAT)"@en ;
+    dcterms:description           "An ontology for describing metadata about software tools and services in catalogs or toolboxes, supporting discovery, comparison, and interoperability."@en ;
+
+    # Version Information
+    owl:versionInfo               "0.0.1"^^xsd:string ;
+    dcterms:hasVersion            "0.0.1"^^xsd:string ;
+    owl:versionIRI                <https://w3id.org/dataspaces/ont/tcat/0.0.1> ;
+    #owl:priorVersion              <https://w3id.org/dataspaces/ont/tcat/0.0.0> ;
+
+    # Timeline
+    dcterms:created               "2025-08-25"^^xsd:date ;
+    dcterms:modified              "2025-08-25"^^xsd:date ;
+    #dcterms:issued                "<to be added>"^^xsd:date ;
+    #bibo:doi                      "<to be added>" ;
+
+    # Creators and Contributors
+    dcterms:creator               <https://orcid.org/0000-0003-2885-7076> ;
+    #dcterms:creator               <to be added> ;
+    #dcterms:contributor           <to be added> ;
+
+    # Publisher Information
+    #dcterms:publisher              "<to be added>" ;
+
+    # License and Rights
+    dcterms:license               <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights                "This ontology is distributed under the Creative Commons Attribution 4.0 International License."@en ;
+
+    # Namespace Information
+    vann:preferredNamespacePrefix "tcat" ;
+    vann:preferredNamespaceUri    "https://w3id.org/dataspaces/ont/tcat/"^^xsd:anyURI ;
+
+    # See Also
+    rdfs:seeAlso                  <https://github.com/Fraunhofer-FIT-DSAI/ds-tcat-ap> ;
+    vann:example                  <https://github.com/Fraunhofer-FIT-DSAI/ds-tcat-ap/tree/main/examples> ;
+
+    # Additional Metadata
+    dcterms:language              lang:ENG ;
+    dcterms:subject               "Software tool catalog"@en, "Software toolbox"@en, "Software tool metadata"@en ;
+    dcterms:audience              "Software toolbox maintainers"@en, "Software tool providers"@en,
+                                  "Software tool consumers"@en ;
+    dcterms:coverage              "Global"@en .
