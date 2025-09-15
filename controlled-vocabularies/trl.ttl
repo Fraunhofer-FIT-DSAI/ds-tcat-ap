@@ -1,0 +1,86 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix trl:     <https://w3id.org/dataspaces/vocab/trl#> .
+
+trl:TRLConceptScheme
+    a                  skos:ConceptScheme ;
+    skos:prefLabel     "Technology Readiness Levels (TRL)"@en ;
+    dcterms:description
+                       "Controlled vocabulary for Technology Readiness Levels (TRL) as defined in HORIZON 2020 – WORK PROGRAMME 2014-2015, Annex G."@en ;
+    dcterms:source     <https://ec.europa.eu/research/participants/data/ref/h2020/wp/2014_2015/annexes/h2020-wp1415-annex-g-trl_en.pdf> ;
+    skos:hasTopConcept trl:TRL1, trl:TRL2, trl:TRL3, trl:TRL4, trl:TRL5, trl:TRL6, trl:TRL7, trl:TRL8, trl:TRL9 .
+
+trl:TRL1
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 1 – Basic principles observed"@en ;
+    skos:definition   "Basic principles observed"@en ;
+    skos:notation     "1"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
+
+trl:TRL2
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 2 – Technology concept formulated"@en ;
+    skos:definition   "Technology concept formulated"@en ;
+    skos:notation     "2"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
+
+trl:TRL3
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 3 – Experimental proof of concept"@en ;
+    skos:definition   "Experimental proof of concept"@en ;
+    skos:notation     "3"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
+
+trl:TRL4
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 4 – Technology validated in lab"@en ;
+    skos:definition   "Technology validated in lab"@en ;
+    skos:notation     "4"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
+
+trl:TRL5
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 5 – Technology validated in relevant environment"@en ;
+    skos:definition   "Technology validated in relevant environment (industrially relevant environment in the case of key enabling technologies)"@en ;
+    skos:notation     "5"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
+
+trl:TRL6
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 6 – Technology demonstrated in relevant environment"@en ;
+    skos:definition   "Technology demonstrated in relevant environment (industrially relevant environment in the case of key enabling technologies)"@en ;
+    skos:notation     "6"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
+
+trl:TRL7
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 7 – System prototype demonstration in operational environment"@en ;
+    skos:definition   "System prototype demonstration in operational environment"@en ;
+    skos:notation     "7"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
+
+trl:TRL8
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 8 – System complete and qualified"@en ;
+    skos:definition   "System complete and qualified"@en ;
+    skos:notation     "8"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
+
+trl:TRL9
+    a                 skos:Concept ;
+    skos:prefLabel    "TRL 9 – Actual system proven in operational environment"@en ;
+    skos:definition   "Actual system proven in operational environment (competitive manufacturing in the case of key enabling technologies; or in space)"@en ;
+    skos:notation     "9"^^xsd:int ;
+    skos:topConceptOf trl:TRLConceptScheme ;
+    skos:inScheme     trl:TRLConceptScheme .
