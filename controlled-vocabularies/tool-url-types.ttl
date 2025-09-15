@@ -1,0 +1,241 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schema:  <https://schema.org/> .
+@prefix turl:    <https://w3id.org/dataspaces/vocab/turl#> .
+
+########################################################################
+# ConceptScheme
+########################################################################
+
+turl:LinkTypeScheme
+    a                  skos:ConceptScheme ;
+    skos:prefLabel     "Tool / Service URL Types"@en ;
+    dcterms:description
+                       "A controlled vocabulary for classifying different types of URLs relevant to software tools and services."@en ;
+    skos:hasTopConcept turl:Homepage, turl:Documentation, turl:DownloadPage, turl:Support, turl:ContactPage,
+                       turl:Repository, turl:APIReference, turl:FAQPage, turl:Blog, turl:Article, turl:ReleaseNotes,
+                       turl:WebPage, turl:WebSite, turl:CommunityForum
+.
+
+########################################################################
+# Top-level concepts
+########################################################################
+
+turl:Homepage
+    a                 skos:Concept ;
+    skos:prefLabel    "Homepage or Product Page"@en ;
+    skos:definition   "The official homepage or product landing page for the tool/service."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:Documentation
+    a                 skos:Concept ;
+    skos:prefLabel    "Documentation"@en ;
+    skos:definition   "General documentation hub or documentation index for the tool/service."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:DownloadPage
+    a                 skos:Concept ;
+    skos:prefLabel    "Download Page"@en ;
+    skos:definition   "A page where users can download releases, installers, or binaries of the tool."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:Support
+    a                 skos:Concept ;
+    skos:prefLabel    "Support Page"@en ;
+    skos:definition   "Official support portal, knowledge base or help center for the tool/service."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:ContactPage
+    a                 skos:Concept ;
+    skos:prefLabel    "Contact Us Page"@en ;
+    skos:definition   "A page with contact information or contact forms to reach the project or vendor."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:Repository
+    a                 skos:Concept ;
+    skos:prefLabel    "Source Code Repository"@en ;
+    skos:definition   "Version control repository for the tool's source code (e.g., GitHub, GitLab)."@en ;
+    skos:exactMatch   schema:SoftwareSourceCode ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:APIReference
+    a                 skos:Concept ;
+    skos:prefLabel    "API Reference / Specification"@en ;
+    skos:definition   "Formal API specification or programmatic reference documentation (OpenAPI, GraphQL schema, etc.)."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:FAQPage
+    a                 skos:Concept ;
+    skos:prefLabel    "FAQ Page"@en ;
+    skos:definition   "Frequently Asked Questions page for the tool."@en ;
+    skos:exactMatch   schema:FAQPage ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:Blog
+    a                 skos:Concept ;
+    skos:prefLabel    "Blog"@en ;
+    skos:definition   "Blog or news section for updates related to the tool."@en ;
+    skos:exactMatch   schema:Blog ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:Article
+    a                 skos:Concept ;
+    skos:prefLabel    "Article"@en ;
+    skos:definition   "An article, whitepaper, or case study describing the tool, best practices, or use cases."@en ;
+    skos:exactMatch   schema:Article ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:ReleaseNotes
+    a                 skos:Concept ;
+    skos:prefLabel    "Release Notes"@en ;
+    skos:definition   "A page or document describing changes, bug fixes and new features in a release."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:WebPage
+    a                 skos:Concept ;
+    skos:prefLabel    "Generic Web Page"@en ;
+    skos:definition   "Any other relevant web page not classified by a more specific concept."@en ;
+    skos:exactMatch   schema:WebPage ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:WebSite
+    a                 skos:Concept ;
+    skos:prefLabel    "Website"@en ;
+    skos:definition   "General website of the tool/service."@en ;
+    skos:exactMatch   schema:WebSite ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:CommunityForum
+    a              skos:Concept ;
+    skos:prefLabel "Community Forum / Q&A"@en ;
+    skos:definition
+                   "Link to community discussion or Q&A platforms related to the tool (e.g., StackOverflow, Reddit, Discourse, Google Groups)."@en ;
+    skos:broader   turl:Support ;
+    skos:inScheme  turl:LinkTypeScheme .
+
+########################################################################
+# Documentation narrower types
+########################################################################
+
+turl:DocumentationIndex
+    a               skos:Concept ;
+    skos:prefLabel  "Documentation Index"@en ;
+    skos:definition "Page listing all documentation sections or topics."@en ;
+    skos:broader    turl:Documentation ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:DocumentationAdminGuide
+    a               skos:Concept ;
+    skos:prefLabel  "Documentation – Administrator Guide"@en ;
+    skos:definition "Guide for administrators and operators of the tool."@en ;
+    skos:broader    turl:Documentation ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:DocumentationDeveloperGuide
+    a               skos:Concept ;
+    skos:prefLabel  "Documentation – Developer Guide"@en ;
+    skos:definition "Guide for developers extending or contributing to the tool."@en ;
+    skos:broader    turl:Documentation ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:DocumentationUserGuide
+    a               skos:Concept ;
+    skos:prefLabel  "Documentation – User Guide"@en ;
+    skos:definition "Guide for end-users on how to use the tool."@en ;
+    skos:broader    turl:Documentation ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:DocumentationQuickstart
+    a               skos:Concept ;
+    skos:prefLabel  "Documentation – Quickstart Guide"@en ;
+    skos:definition "Concise guide to quickly get started with the tool."@en ;
+    skos:broader    turl:Documentation ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+########################################################################
+# Support / community narrower types
+########################################################################
+
+turl:IssueTracker
+    a               skos:Concept ;
+    skos:prefLabel  "Issue Tracker / Bug & Feature Management System"@en ;
+    skos:definition "Page or system to report and track issues and feature requests (e.g., GitHub Issues)."@en ;
+    skos:broader    turl:Support ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:MailingList
+    a               skos:Concept ;
+    skos:prefLabel  "Mailing List"@en ;
+    skos:definition "Mailing list or forum for discussions."@en ;
+    skos:broader    turl:CommunityForum ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:Wiki
+    a               skos:Concept ;
+    skos:prefLabel  "Wiki"@en ;
+    skos:definition "Community-maintained wiki documentation."@en ;
+    skos:broader    turl:CommunityForum ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+########################################################################
+# Download / distribution narrower types (including container registries)
+########################################################################
+
+turl:ContainerRegistryPage
+    a              skos:Concept ;
+    skos:prefLabel "Container Registry Page"@en ;
+    skos:definition
+                   "Link to a container registry page (e.g., DockerHub, GitHub Container Registry (GHCR), Quay.io, Azure Container Registry, GitLab Container Registry) where container images of the tool are listed."@en ;
+    skos:broader   turl:DownloadPage ;
+    skos:inScheme  turl:LinkTypeScheme .
+
+turl:DockerHubPage
+    a               skos:Concept ;
+    skos:prefLabel  "DockerHub Page"@en ;
+    skos:definition "Link to the tool's page on DockerHub where its container images are published."@en ;
+    skos:broader    turl:ContainerRegistryPage ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:HelmChartRepository
+    a               skos:Concept ;
+    skos:prefLabel  "Helm Chart Repository"@en ;
+    skos:definition "Repository or index page for Helm charts used to deploy the tool on Kubernetes."@en ;
+    skos:broader    turl:DownloadPage ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:PackageRegistryPage
+    a              skos:Concept ;
+    skos:prefLabel "Package Registry Page"@en ;
+    skos:definition
+                   "Link to package registries (e.g., PyPI, npm, Maven Central) where packages or libraries of the tool are published."@en ;
+    skos:broader   turl:DownloadPage ;
+    skos:inScheme  turl:LinkTypeScheme .
+
+turl:Changelog
+    a               skos:Concept ;
+    skos:prefLabel  "Changelog"@en ;
+    skos:definition "Link to a changelog file or page (may be separate from formal release notes)."@en ;
+    skos:broader    turl:ReleaseNotes ;
+    skos:inScheme   turl:LinkTypeScheme .
+
+turl:SecurityAdvisories
+    a               skos:Concept ;
+    skos:prefLabel  "Security Advisories"@en ;
+    skos:definition "Page listing security advisories or CVE notices relevant to the tool."@en ;
+    skos:broader    turl:Support ;
+    skos:inScheme   turl:LinkTypeScheme .
