@@ -3,15 +3,22 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
 @prefix trl:     <https://w3id.org/dataspaces/vocab/trl#> .
 
 trl:TRLConceptScheme
-    a                  skos:ConceptScheme ;
-    skos:prefLabel     "Technology Readiness Levels (TRL)"@en ;
-    dcterms:description
-                       "Controlled vocabulary for Technology Readiness Levels (TRL) as defined in HORIZON 2020 – WORK PROGRAMME 2014-2015, Annex G."@en ;
-    dcterms:source     <https://ec.europa.eu/research/participants/data/ref/h2020/wp/2014_2015/annexes/h2020-wp1415-annex-g-trl_en.pdf> ;
-    skos:hasTopConcept trl:TRL1, trl:TRL2, trl:TRL3, trl:TRL4, trl:TRL5, trl:TRL6, trl:TRL7, trl:TRL8, trl:TRL9 .
+    a                             skos:ConceptScheme ;
+    skos:prefLabel                "Technology Readiness Levels (TRL)"@en ;
+    dcterms:description           "Controlled vocabulary for Technology Readiness Levels (TRL) as defined in HORIZON 2020 – WORK PROGRAMME 2014-2015, Annex G."@en ;
+    dcterms:source                <https://ec.europa.eu/research/participants/data/ref/h2020/wp/2014_2015/annexes/h2020-wp1415-annex-g-trl_en.pdf> ;
+    skos:hasTopConcept            trl:TRL1, trl:TRL2, trl:TRL3, trl:TRL4, trl:TRL5, trl:TRL6, trl:TRL7, trl:TRL8,
+                                  trl:TRL9 ;
+
+    # Namespace Information
+    vann:preferredNamespacePrefix "trl" ;
+    vann:preferredNamespaceUri    "https://w3id.org/dataspaces/vocab/trl#"^^xsd:anyURI
+.
 
 trl:TRL1
     a                 skos:Concept ;
