@@ -3,21 +3,26 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix schema:  <https://schema.org/> .
-@prefix turl:    <https://w3id.org/dataspaces/vocab/turl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix turl:    <https://w3id.org/dataspaces/vocab/turl/> .
 
 ########################################################################
 # ConceptScheme
 ########################################################################
 
 turl:LinkTypeScheme
-    a                  skos:ConceptScheme ;
-    skos:prefLabel     "Tool / Service URL Types"@en ;
-    dcterms:description
-                       "A controlled vocabulary for classifying different types of URLs relevant to software tools and services."@en ;
-    skos:hasTopConcept turl:Homepage, turl:Documentation, turl:DownloadPage, turl:Support, turl:ContactPage,
-                       turl:Repository, turl:APIReference, turl:FAQPage, turl:Blog, turl:Article, turl:ReleaseNotes,
-                       turl:WebPage, turl:WebSite, turl:CommunityForum, turl:PricingPage, turl:PlaygroundWebService,
-                       turl:DeploymentInstance
+    a                             skos:ConceptScheme ;
+    skos:prefLabel                "Tool/Service URL Types"@en ;
+    dcterms:description           "A controlled vocabulary for classifying different types of URLs relevant to software tools and services."@en ;
+    skos:hasTopConcept            turl:Homepage, turl:Documentation, turl:DownloadPage, turl:Support, turl:ContactPage,
+                                  turl:Repository, turl:APIReference, turl:FAQPage, turl:Blog, turl:Article,
+                                  turl:ReleaseNotes, turl:WebPage, turl:WebSite, turl:CommunityForum, turl:PricingPage,
+                                  turl:PlaygroundWebService, turl:DeploymentInstance ;
+
+    # Namespace Information
+    vann:preferredNamespacePrefix "turl" ;
+    vann:preferredNamespaceUri    "https://w3id.org/dataspaces/vocab/turl/"^^xsd:anyURI
 .
 
 ########################################################################
