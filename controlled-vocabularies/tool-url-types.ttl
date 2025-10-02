@@ -16,7 +16,8 @@ turl:LinkTypeScheme
                        "A controlled vocabulary for classifying different types of URLs relevant to software tools and services."@en ;
     skos:hasTopConcept turl:Homepage, turl:Documentation, turl:DownloadPage, turl:Support, turl:ContactPage,
                        turl:Repository, turl:APIReference, turl:FAQPage, turl:Blog, turl:Article, turl:ReleaseNotes,
-                       turl:WebPage, turl:WebSite, turl:CommunityForum
+                       turl:WebPage, turl:WebSite, turl:CommunityForum, turl:PricingPage, turl:PlaygroundWebService,
+                       turl:DeploymentInstance
 .
 
 ########################################################################
@@ -127,6 +128,27 @@ turl:CommunityForum
                    "Link to community discussion or Q&A platforms related to the tool (e.g., StackOverflow, Reddit, Discourse, Google Groups)."@en ;
     skos:broader   turl:Support ;
     skos:inScheme  turl:LinkTypeScheme .
+
+turl:PricingPage
+    a                 skos:Concept ;
+    skos:prefLabel    "Pricing Page"@en ;
+    skos:definition   "Pricing and subscription plans page for the tool."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:PlaygroundWebService
+    a                 skos:Concept ;
+    skos:prefLabel    "Playground Web Service Page"@en ;
+    skos:definition   "A playground web service for trying out the tool."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
+
+turl:DeploymentInstance
+    a                 skos:Concept ;
+    skos:prefLabel    "Deployment Instance"@en ;
+    skos:definition   "An operational deployment instance of the tool setup and maintained by some organization."@en ;
+    skos:topConceptOf turl:LinkTypeScheme ;
+    skos:inScheme     turl:LinkTypeScheme .
 
 ########################################################################
 # Documentation narrower types
