@@ -12,6 +12,9 @@
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix bibo:    <http://purl.org/ontology/bibo/> .
 @prefix lang:    <http://publications.europa.eu/resource/authority/language/> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
 
 # Ontology Definition
 tcat:
@@ -22,14 +25,14 @@ tcat:
     dcterms:description           "An ontology for describing metadata about software tools and services in catalogs or toolboxes, supporting discovery, comparison, and interoperability."@en ;
 
     # Version Information
-    owl:versionInfo               "0.0.1"^^xsd:string ;
-    dcterms:hasVersion            "0.0.1"^^xsd:string ;
-    owl:versionIRI                <https://w3id.org/dataspaces/ont/tcat/0.0.1> ;
+    owl:versionInfo               "0.3.0"^^xsd:string ;
+    dcterms:hasVersion            "0.3.0"^^xsd:string ;
+    owl:versionIRI                <https://w3id.org/dataspaces/ont/tcat/0.3.0> ;
     #owl:priorVersion              <https://w3id.org/dataspaces/ont/tcat/0.0.0> ;
 
     # Timeline
     dcterms:created               "2025-08-25"^^xsd:date ;
-    dcterms:modified              "2025-08-25"^^xsd:date ;
+    dcterms:modified              "2026-02-18"^^xsd:date ;
     #dcterms:issued                "<to be added>"^^xsd:date ;
     #bibo:doi                      "<to be added>" ;
 
@@ -59,3 +62,377 @@ tcat:
     dcterms:audience              "Software toolbox maintainers"@en, "Software tool providers"@en,
                                   "Software tool consumers"@en ;
     dcterms:coverage              "Global"@en .
+
+tcat:SoftwareToolCatalog
+    a                owl:Class, rdfs:Class ;
+    rdfs:label       "Software Tool Catalog"@en ;
+    rdfs:comment     "A catalog of software tools in the generic Tool Catalog Ontology (TCAT)."@en ;
+    rdfs:subClassOf  dcat:Catalog, schema:DataCatalog ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:SoftwareTool
+    a                owl:Class, rdfs:Class ;
+    rdfs:label       "Software Tool"@en ;
+    rdfs:comment     "A software tool (e.g., application or service) described in a generic tool catalog."@en ;
+    rdfs:subClassOf  dcat:Resource, schema:SoftwareApplication ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:softwareTool
+    a                owl:ObjectProperty, rdf:Property ;
+    rdfs:label       "software tool"@en ;
+    rdfs:comment     "Links a software tool catalog to a software tool it contains."@en ;
+    rdfs:domain      tcat:SoftwareToolCatalog ;
+    rdfs:range       tcat:SoftwareTool ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:Organization
+    a                   owl:Class, rdfs:Class ;
+    rdfs:label          "Organization"@en ;
+    dcterms:alternative "Institute"@en, "Company"@en ;
+    rdfs:comment        "Organization in the Tool Catalog Ontology (TCAT); generic (not dataspace-specific). Aligns with Schema.org, FOAF, and vCard."@en ;
+    rdfs:subClassOf     schema:Organization, foaf:Organization, vcard:Organization ;
+    rdfs:isDefinedBy    tcat: .
+
+tcat:Person
+    a                owl:Class, rdfs:Class ;
+    rdfs:label       "Person"@en ;
+    rdfs:comment     "Person in the Tool Catalog Ontology (TCAT); aligns with Schema.org, FOAF, and vCard."@en ;
+    rdfs:subClassOf  schema:Person, foaf:Person, vcard:Individual ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:SoftwareDeployment
+    a                owl:Class, rdfs:Class ;
+    rdfs:label       "Software Deployment"@en ;
+    rdfs:comment     "A description of an existing deployment of a software tool."@en ;
+    rdfs:subClassOf  schema:CreativeWork ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:applicationDomain
+    a                owl:DatatypeProperty, rdf:Property ;
+    rdfs:label       "application domain"@en ;
+    rdfs:comment     "Application domain of the tool or deployment; use controlled vocabularies (e.g., EuroVoc) where available."@en ;
+    rdfs:range       xsd:anyURI ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:hasTRL
+    a                owl:DatatypeProperty, rdf:Property ;
+    rdfs:label       "has TRL"@en ;
+    rdfs:comment     "Technology Readiness Level of a software tool; use URIs from a TRL vocabulary."@en ;
+    rdfs:domain      tcat:SoftwareTool ;
+    rdfs:range       xsd:anyURI ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:TRLJustification
+    a                owl:DatatypeProperty, rdf:Property ;
+    rdfs:label       "TRL justification"@en ;
+    rdfs:comment     "Justification for the assigned Technology Readiness Level (TRL)."@en ;
+    rdfs:domain      tcat:SoftwareTool ;
+    rdfs:range       xsd:string ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:softwareDeployment
+    a                owl:ObjectProperty, rdf:Property ;
+    rdfs:label       "software deployment"@en ;
+    rdfs:comment     "Links a software tool to an instance deployment (e.g., where and by whom it is used)."@en ;
+    rdfs:domain      tcat:SoftwareTool ;
+    rdfs:range       tcat:SoftwareDeployment ;
+    rdfs:isDefinedBy tcat: .
+
+tcat:SaaSBusinessOffering
+    a                  owl:ObjectProperty, rdf:Property ;
+    rdfs:label         "SaaS business offering"@en ;
+    rdfs:comment       "Specialized deployment link indicating a deployment offered as SaaS to consumers."@en ;
+    rdfs:subPropertyOf tcat:softwareDeployment ;
+    rdfs:domain        tcat:SoftwareTool ;
+    rdfs:range         tcat:SoftwareDeployment ;
+    rdfs:isDefinedBy   tcat: .
+
+tcat:similarTo
+    a                  owl:ObjectProperty, rdf:Property ;
+    rdfs:label         "similar to"@en ;
+    rdfs:comment       "Links a software tool to another tool with similar functionality; subproperty of dcterms:relation."@en ;
+    rdfs:subPropertyOf dcterms:relation ;
+    rdfs:domain        tcat:SoftwareTool ;
+    rdfs:range         tcat:SoftwareTool ;
+    rdfs:isDefinedBy   tcat: .
+
+#########################################################################
+### Reused terms (minimal mentions with origin via rdfs:isDefinedBy) ###
+#########################################################################
+
+################################# Reused classes #################################
+
+schema:Organization
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+foaf:Organization
+    a                rdfs:Class ;
+    rdfs:isDefinedBy foaf: .
+
+vcard:Organization
+    a                rdfs:Class ;
+    rdfs:isDefinedBy vcard: .
+
+vcard:Kind
+    a                rdfs:Class ;
+    rdfs:isDefinedBy vcard: .
+
+foaf:Document
+    a                rdfs:Class ;
+    rdfs:isDefinedBy foaf: .
+
+schema:PostalAddress
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:Person
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:ContactPoint
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:Text
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:URL
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:PostalAddress
+    a                rdfs:Class ;
+    rdfs:subClassOf  schema:ContactPoint ;
+    rdfs:isDefinedBy schema: .
+
+vcard:Individual
+    a                rdfs:Class ;
+    rdfs:isDefinedBy vcard: .
+
+schema:CreativeWork
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+dcat:CatalogRecord
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcat: .
+
+dcterms:Standard
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcterms: .
+
+prov:Attribution
+    a                rdfs:Class ;
+    rdfs:isDefinedBy prov: .
+
+prov:Agent
+    a                rdfs:Class ;
+    rdfs:isDefinedBy prov: .
+
+dcat:Role
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcat: .
+
+dcat:Catalog
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcat: .
+
+schema:DataCatalog
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+schema:SoftwareApplication
+    a                rdfs:Class ;
+    rdfs:isDefinedBy schema: .
+
+dcat:Resource
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcat: .
+
+dcat:Relationship
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcat: .
+
+################################# Reused properties #################################
+
+schema:name
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:description
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+foaf:homepage
+    a                rdf:Property ;
+    rdfs:isDefinedBy foaf: .
+
+schema:contactPoint
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:address
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:email
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:telephone
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:legalRepresentative
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:sameAs
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:logo
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:employee
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:department
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:addressCountry
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:streetAddress
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:postalCode
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:addressLocality
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:addressRegion
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+dcterms:alternative
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+schema:givenName
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:familyName
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:worksFor
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:identifier
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:maintainer
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:contactType
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+schema:url
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+foaf:page
+    a                rdf:Property ;
+    rdfs:isDefinedBy foaf: .
+
+foaf:primaryTopic
+    a                rdf:Property ;
+    rdfs:isDefinedBy foaf: .
+
+dcterms:issued
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:modified
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:creator
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:conformsTo
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:type
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:format
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:title
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:description
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcat:hadRole
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+prov:agent
+    a                rdf:Property ;
+    rdfs:isDefinedBy prov: .
+
+adms:status
+    a                rdf:Property ;
+    rdfs:isDefinedBy adms: .
+
+dcterms:requires
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:hasVersion
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcat:previousVersion
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+schema:screenshot
+    a                rdf:Property ;
+    rdfs:isDefinedBy schema: .
+
+prov:qualifiedAttribution
+    a                rdf:Property ;
+    rdfs:isDefinedBy prov: .
+
+dcat:qualifiedRelation
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+dcterms:spatial
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .

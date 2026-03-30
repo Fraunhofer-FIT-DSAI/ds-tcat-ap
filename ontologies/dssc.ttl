@@ -23,9 +23,9 @@ dssc:
     dcterms:description           "The Dataspaces Blueprint Ontology models concepts from the Data Spaces Support Centre (DSSC) Dataspaces Blueprint v2.0, including Building Blocks and Services."@en ;
 
     # Version Information
-    owl:versionInfo               "0.0.1"^^xsd:string ;
-    dcterms:hasVersion            "0.0.1"^^xsd:string ;
-    owl:versionIRI                <https://w3id.org/dataspaces/ont/dssc/0.0.1> ;
+    owl:versionInfo               "0.3.0"^^xsd:string ;
+    dcterms:hasVersion            "0.3.0"^^xsd:string ;
+    owl:versionIRI                <https://w3id.org/dataspaces/ont/dssc/0.0.3> ;
     #owl:priorVersion              <https://w3id.org/dataspaces/ont/dssc/0.0.0> ;
 
     # Timeline
@@ -65,3 +65,10 @@ dssc:
     dcterms:audience              "Dataspaces Toolbox maintainers"@en, "Dataspace initiatives"@en,
                                   "Dataspace tool providers"@en, "Dataspace tool consumers"@en ;
     dcterms:coverage              "Global"@en .
+
+dssc:DataspaceComponent
+    a                owl:Class, rdfs:Class ;
+    rdfs:label       "Dataspace Component"@en ;
+    rdfs:comment     "A conceptual component defined in the DSSC Dataspaces Blueprint."@en ;
+    rdfs:isDefinedBy dssc: .
+

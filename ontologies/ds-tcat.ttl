@@ -1,4 +1,4 @@
-@prefix ds-tcat:    <https://w3id.org/dataspaces/ont/ds-tcat/> .
+@prefix ds-tcat: <https://w3id.org/dataspaces/ont/ds-tcat/> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
@@ -12,6 +12,9 @@
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix bibo:    <http://purl.org/ontology/bibo/> .
 @prefix lang:    <http://publications.europa.eu/resource/authority/language/> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix dssc:    <https://w3id.org/dataspaces/ont/dssc/> .
+@prefix tcat:    <https://w3id.org/dataspaces/ont/tcat/> .
 
 # Ontology Definition
 ds-tcat:
@@ -22,9 +25,9 @@ ds-tcat:
     dcterms:description           "An ontology for describing metadata about dataspaces tools and services in catalogs or toolboxes, supporting discovery, comparison, and interoperability. These tools represent implementations of Dataspace Services as defined in the DSSC Dataspaces Blueprint v2.0."@en ;
 
     # Version Information
-    owl:versionInfo               "0.0.1"^^xsd:string ;
-    dcterms:hasVersion            "0.0.1"^^xsd:string ;
-    owl:versionIRI                <https://w3id.org/dataspaces/ont/ds-tcat/0.0.1> ;
+    owl:versionInfo               "0.3.0"^^xsd:string ;
+    dcterms:hasVersion            "0.3.0"^^xsd:string ;
+    owl:versionIRI                <https://w3id.org/dataspaces/ont/ds-tcat/0.3.0> ;
     #owl:priorVersion              <https://w3id.org/dataspaces/ont/ds-tcat/0.0.0> ;
 
     # Timeline
@@ -59,3 +62,115 @@ ds-tcat:
     dcterms:audience              "Dataspaces toolbox maintainers"@en, "Dataspaces tool providers"@en,
                                   "Dataspaces tool consumers"@en ;
     dcterms:coverage              "Global"@en .
+
+ds-tcat:DataspaceToolCatalog
+    a                owl:Class, rdfs:Class ;
+    rdfs:label       "Dataspace Tool Catalog"@en ;
+    rdfs:comment     "A catalog of software tools for dataspace ecosystems; specialization of the generic Software Tool Catalog."@en ;
+    rdfs:subClassOf  tcat:SoftwareToolCatalog ;
+    rdfs:isDefinedBy ds-tcat: .
+
+ds-tcat:correspondingDataspacesBlueprintVersion
+    a                owl:DatatypeProperty, rdf:Property ;
+    rdfs:label       "corresponding Dataspaces Blueprint version"@en ;
+    rdfs:comment     "Version(s) of the DSSC Dataspaces Blueprint that the catalog corresponds to."@en ;
+    rdfs:range       xsd:string ;
+    rdfs:isDefinedBy ds-tcat: .
+
+ds-tcat:dataspaceSpecificPurpose
+    a                owl:DatatypeProperty, rdf:Property ;
+    rdfs:label       "dataspace-specific purpose"@en ;
+    rdfs:comment     "Purpose statement describing the catalog’s specific intent within dataspace contexts."@en ;
+    rdfs:range       xsd:string ;
+    rdfs:isDefinedBy ds-tcat: .
+
+ds-tcat:DataspaceTool
+    a                owl:Class, rdfs:Class ;
+    rdfs:label       "Dataspace Tool"@en ;
+    rdfs:comment     "A software tool in the dataspace context; specialization of the generic TCAT Software Tool."@en ;
+    rdfs:subClassOf  tcat:SoftwareTool ;
+    rdfs:isDefinedBy ds-tcat: .
+
+ds-tcat:implementsDataspaceComponent
+    a                owl:ObjectProperty, rdf:Property ;
+    rdfs:label       "implements dataspace component"@en ;
+    rdfs:comment     "Links a dataspace tool to the DSSC dataspace component it implements."@en ;
+    rdfs:domain      ds-tcat:DataspaceTool ;
+    rdfs:range       dssc:DataspaceComponent ;
+    rdfs:isDefinedBy ds-tcat: .
+
+#########################################################################
+### Reused terms (minimal mentions with origin via rdfs:isDefinedBy) ###
+#########################################################################
+
+################################# Reused classes #################################
+
+dcterms:LicenseDocument
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:RightsStatement
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:LinguisticSystem
+    a                rdfs:Class ;
+    rdfs:isDefinedBy dcterms: .
+
+rdfs:Resource
+    a                rdfs:Class ;
+    rdfs:isDefinedBy rdfs: .
+
+################################# Reused properties #################################
+
+dcat:contactPoint
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+dcat:version
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+dcat:record
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+adms:versionNotes
+    a                rdf:Property ;
+    rdfs:isDefinedBy adms: .
+
+dcat:keyword
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+dcterms:language
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcat:landingPage
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+dcat:themeTaxonomy
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+dcat:theme
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcat: .
+
+dcterms:rights
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:isReferencedBy
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:license
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:accessRights
+    a                rdf:Property ;
+    rdfs:isDefinedBy dcterms: .
